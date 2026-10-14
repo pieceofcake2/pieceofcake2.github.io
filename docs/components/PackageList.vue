@@ -1,5 +1,8 @@
 <script setup>
-import { groups, docsUrl, githubUrl, packagistUrl, badgeUrl } from './packages.js'
+// The package list is defined in pieceofcake2/docs-skeleton, which also builds
+// the "Plugins" menu of the header from it. docs/ is copied into the skeleton
+// at build time, so the path is relative to .skeleton/docs/components/.
+import { groups, docsUrl, githubUrl, packagistUrl, badgeUrl } from '../../.vitepress/packages.js'
 
 const props = defineProps({
   lang: { type: String, default: 'en' },
