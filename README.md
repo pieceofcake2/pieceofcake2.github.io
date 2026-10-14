@@ -16,11 +16,14 @@ The site uses the same theme as the book:
 
 - `docs/index.md` - the English page (`/`)
 - `docs/ja/index.md` - the Japanese page (`/ja/`)
-- `docs/components/packages.js` - the list of packages shown on both pages,
-  grouped like the book's
+- `docs/components/PackageList.vue` - renders the package list shown on both
+  pages. The list itself is `.vitepress/packages.js` of
+  [pieceofcake2/docs-skeleton](https://github.com/pieceofcake2/docs-skeleton),
+  which also builds the "Plugins" menu of the header; the component imports it
+  from the skeleton cloned at build time. When a repository is added, add it
+  there and to the book's
   [Maintained Plugins](https://pieceofcake2.github.io/docs/plugins/maintained-plugins.html)
-  page. When a repository is added, add it here and to that page of the book.
-- `docs/components/PackageList.vue` - renders the package list
+  page.
 - `config.js` - overrides of the skeleton's VitePress configuration: header
   menu (the same as the book's), footer and languages
 
@@ -47,7 +50,8 @@ checkout of the skeleton. Dependencies are installed with
 
 Pushes to `main` are deployed to GitHub Pages by
 `.github/workflows/deploy.yml`. The workflow can also be started manually, and
-by a `skeleton-updated` repository dispatch when the theme changes.
+by a `skeleton-updated` repository dispatch when the theme, the header menu or
+the package list changes.
 
 ## License
 
