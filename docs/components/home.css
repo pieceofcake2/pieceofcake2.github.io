@@ -8,6 +8,13 @@
   line-height: 0;
 }
 
+/* The hero text is centered below 960px (VitePress), so center the badges too */
+@media (max-width: 959px) {
+  .VPHero .tagline .poc-hero-badge {
+    justify-content: center;
+  }
+}
+
 .VPHero .tagline .poc-hero-badge img {
   display: inline-block;
   height: 20px;
