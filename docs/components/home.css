@@ -65,34 +65,68 @@
   color: var(--vp-c-text-1);
 }
 
-/* Hero image: a large, faded logo set to the right as decoration */
+/* Hero image: the faded logo is a background accent anchored to the
+   bottom-right of the hero, behind the text. The hero clips it, so it can
+   bleed off the right edge without making the page scroll sideways. */
 .VPHero.has-image {
-  overflow-x: clip;
+  position: relative;
+  overflow: clip;
+}
+
+.VPHero.has-image .image {
+  position: absolute;
+  right: -110px;
+  bottom: -60px;
+  z-index: 0;
+  width: 320px;
+  height: 320px;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.VPHero.has-image .image-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  transform: none;
+}
+
+.VPHero.has-image .image-bg {
+  display: none;
 }
 
 .VPHero.has-image .image-src {
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
   filter: none;
-  opacity: 0.18;
+  opacity: 0.08;
 }
 
 .dark .VPHero.has-image .image-src {
-  opacity: 0.14;
+  opacity: 0.07;
+}
+
+.VPHero.has-image .main {
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 960px) {
-  .VPHero.has-image .image-container {
-    transform: translate(72px, -24px);
+  .VPHero.has-image .image {
+    right: -220px;
+    bottom: -140px;
+    width: 720px;
+    height: 720px;
   }
 
   .VPHero.has-image .image-src {
-    max-width: 440px;
-    max-height: 440px;
+    opacity: 0.14;
   }
-}
 
-/* Below 960px the image would sit above the text; leave it out there. */
-@media (max-width: 959px) {
-  .VPHero.has-image .image {
-    display: none;
+  .dark .VPHero.has-image .image-src {
+    opacity: 0.11;
   }
 }

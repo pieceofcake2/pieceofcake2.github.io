@@ -32,21 +32,20 @@ import '../components/home.css'
 
 <div class="poc-features">
   <div class="poc-feature">
-    <p class="poc-feature-title">モダン PHP のルール</p>
-    <p>PHP 8.0〜8.5 で動作します。コードは
-    <a href="https://pieceofcake2.github.io/docs/ja/contributing/cakephp-coding-conventions.html">CakePHP 5 のコーディング規約</a>に従い、phpcs でチェックしています。</p>
+    <p class="poc-feature-title">モダン PHP に対応</p>
+    <p>PHP 8.0〜8.5 で動作します。Composer でインストールと依存関係を管理し、コードは CakePHP 5 と同じ<a href="https://pieceofcake2.github.io/docs/ja/contributing/cakephp-coding-conventions.html">コーディング規約</a>にそろえています。</p>
   </div>
   <div class="poc-feature">
-    <p class="poc-feature-title">脆弱性の修正</p>
-    <p>CakePHP 2.x の脆弱性を引き続き修正しています。詳しくは<a href="https://pieceofcake2.github.io/docs/ja/appendices/security-fixes.html">脆弱性への対応</a>を参照してください。</p>
+    <p class="poc-feature-title">脆弱性への対応</p>
+    <p>本家のサポートが終わったあとも、CakePHP 2.x で見つかった<a href="https://pieceofcake2.github.io/docs/ja/appendices/security-fixes.html">脆弱性</a>を修正し続けています。</p>
   </div>
   <div class="poc-feature">
-    <p class="poc-feature-title">Composer とテストによる品質</p>
-    <p>Composer でインストールし、すべての PHP バージョンの CI で PHPUnit 9.6 のテストを実行し、PHPStan でチェックしています。</p>
+    <p class="poc-feature-title">テストで品質を確保</p>
+    <p>対応するすべての PHP バージョンで、PHPUnit 9.6 のテストを CI で実行しています。PHPStan による静的解析も行っています。</p>
   </div>
   <div class="poc-feature">
-    <p class="poc-feature-title">プラグインによるモダンなツール</p>
-    <p>Twig ビューなどのプラグインをメンテナンスしているほか、Vite や Webpack Encore のアセットヘルパー、CAPTCHA、ブラウザでの E2E テストといった新しいパッケージを提供しています。</p>
+    <p class="poc-feature-title">プラグインでモダンな開発に</p>
+    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> や <a href="https://pieceofcake2.github.io/webpack-encore/">Webpack Encore</a> によるアセットの連携、<a href="https://pieceofcake2.github.io/twig-view/">Twig のビュー</a>、<a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>、<a href="https://pieceofcake2.github.io/e2e-test/">ブラウザでの E2E テスト</a>など、今の開発に合わせたプラグインを用意しています。</p>
   </div>
 </div>
 

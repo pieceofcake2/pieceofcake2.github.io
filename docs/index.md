@@ -32,25 +32,20 @@ import './components/home.css'
 
 <div class="poc-features">
   <div class="poc-feature">
-    <p class="poc-feature-title">Rules for modern PHP</p>
-    <p>Runs on PHP 8.0–8.5. The code follows the
-    <a href="https://pieceofcake2.github.io/docs/contributing/cakephp-coding-conventions.html">CakePHP 5 coding standard</a>,
-    checked with phpcs.</p>
+    <p class="poc-feature-title">Modern PHP</p>
+    <p>Runs on PHP 8.0–8.5. Installed and managed with Composer, with code that follows the CakePHP 5 <a href="https://pieceofcake2.github.io/docs/contributing/cakephp-coding-conventions.html">coding standard</a>.</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Security fixes</p>
-    <p>Vulnerabilities in CakePHP 2.x are still fixed.
-    See <a href="https://pieceofcake2.github.io/docs/appendices/security-fixes.html">Security Fixes</a>.</p>
+    <p><a href="https://pieceofcake2.github.io/docs/appendices/security-fixes.html">Vulnerabilities</a> found in CakePHP 2.x keep being fixed after the upstream end of life.</p>
   </div>
   <div class="poc-feature">
-    <p class="poc-feature-title">Quality through Composer and tests</p>
-    <p>Installed with Composer, tested with PHPUnit 9.6 in CI on every PHP
-    version, and checked with PHPStan.</p>
+    <p class="poc-feature-title">Tested</p>
+    <p>PHPUnit 9.6 test suites run in CI on every supported PHP version, together with PHPStan static analysis.</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Modern tooling through plugins</p>
-    <p>Maintained plugins such as Twig views, plus new packages: Vite and
-    Webpack Encore asset helpers, CAPTCHA and browser E2E testing.</p>
+    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> and <a href="https://pieceofcake2.github.io/webpack-encore/">Webpack Encore</a> asset integration, <a href="https://pieceofcake2.github.io/twig-view/">Twig views</a>, <a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>, <a href="https://pieceofcake2.github.io/e2e-test/">browser E2E testing</a> and more.</p>
   </div>
 </div>
 
