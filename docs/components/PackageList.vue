@@ -114,7 +114,7 @@ li.poc-card {
   min-width: 0;
   border: 1px solid var(--vp-c-bg-soft);
   border-radius: 12px;
-  background-color: var(--vp-c-bg-soft);
+  background-color: color-mix(in srgb, var(--vp-c-bg-soft) 50%, var(--vp-c-bg));
   transition: border-color 0.25s;
 }
 

@@ -55,7 +55,7 @@
 .poc-feature {
   padding: 16px 18px;
   border-radius: 12px;
-  background-color: var(--vp-c-bg-soft);
+  background-color: color-mix(in srgb, var(--vp-c-bg-soft) 50%, var(--vp-c-bg));
 }
 
 .vp-doc .poc-feature p {
