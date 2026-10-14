@@ -57,7 +57,7 @@ import './components/home.css'
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Modern tooling through plugins</p>
-    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> and <a href="https://pieceofcake2.github.io/webpack-encore/">Webpack Encore</a> asset integration, <a href="https://pieceofcake2.github.io/twig-view/">Twig views</a>, <a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>, <a href="https://pieceofcake2.github.io/e2e-test/">browser E2E testing</a> and more.</p>
+    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> asset integration, <a href="https://pieceofcake2.github.io/twig-view/">Twig views</a>, <a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>, <a href="https://pieceofcake2.github.io/e2e-test/">browser E2E testing</a> and more.</p>
   </div>
 </div>
 
