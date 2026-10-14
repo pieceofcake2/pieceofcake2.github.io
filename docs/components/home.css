@@ -65,21 +65,29 @@
   color: var(--vp-c-text-1);
 }
 
-/* Hero image: the faded logo is a background accent anchored to the
-   bottom-right of the hero, behind the text. The hero clips it, so it can
-   bleed off the right edge without making the page scroll sideways. */
+/* Hero image: the faded logo is a background accent behind the text,
+   aligned to the bottom-right of the hero's content frame (.container, the
+   same right edge as the page content). logo.png has transparent margins
+   (30.4% on the right, 15.2% at the bottom), so the offsets below put the
+   edges of the graphic itself on the frame. The hero clips the transparent
+   overhang, so the page never scrolls sideways. */
 .VPHero.has-image {
+  --poc-accent-size: 320px;
   position: relative;
   overflow: clip;
 }
 
+.VPHero.has-image .container {
+  position: relative;
+}
+
 .VPHero.has-image .image {
   position: absolute;
-  right: -110px;
-  bottom: -60px;
+  right: calc(var(--poc-accent-size) * -0.304);
+  bottom: calc(var(--poc-accent-size) * -0.152);
   z-index: 0;
-  width: 320px;
-  height: 320px;
+  width: var(--poc-accent-size);
+  height: var(--poc-accent-size);
   margin: 0;
   pointer-events: none;
   user-select: none;
@@ -115,11 +123,8 @@
 }
 
 @media (min-width: 960px) {
-  .VPHero.has-image .image {
-    right: -220px;
-    bottom: -140px;
-    width: 720px;
-    height: 720px;
+  .VPHero.has-image {
+    --poc-accent-size: 720px;
   }
 
   .VPHero.has-image .image-src {
