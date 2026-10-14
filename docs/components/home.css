@@ -13,7 +13,8 @@
 }
 
 .VPHero .tagline a {
-  color: var(--cake-color-link);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
   text-decoration: none;
 }
 
