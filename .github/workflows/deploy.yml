@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [skeleton-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Clone docs-skeleton
+        run: git clone --depth 1 https://github.com/pieceofcake2/docs-skeleton.git .skeleton
+
+      - name: Merge the site into the skeleton
+        run: |
+          rsync -a docs/ .skeleton/docs/
+          cp config.js .skeleton/
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .skeleton/package-lock.json
+
+      - run: npm ci
+        working-directory: .skeleton
+
+      - run: npm run docs:build
+        working-directory: .skeleton
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .skeleton/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
