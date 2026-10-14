@@ -78,7 +78,7 @@ export default ({ bookNav }) => ({
     nav: bookNav({ absolute: true, current: 'home' }),
     footer: {
       message: "CakePHP is a trademark of the Cake Software Foundation. Piece of Cake 2 is a community project and is not affiliated with or endorsed by the Cake Software Foundation.",
-      copyright: "© 2025-present Piece of Cake 2. CakePHP 2 is released under the <a href=\"https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE\">MIT License</a>.",
+      copyright: "© Piece of Cake 2. CakePHP 2 is released under the <a href=\"https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE\">MIT License</a>.",
     },
   },
   locales: {
@@ -94,7 +94,7 @@ export default ({ bookNav }) => ({
         nav: bookNav({ locale: 'ja', absolute: true, current: 'home' }),
         footer: {
           message: "CakePHP は Cake Software Foundation の商標です。Piece of Cake 2 はコミュニティによるプロジェクトであり、Cake Software Foundation との提携や承認を受けたものではありません。",
-          copyright: "© 2025-present Piece of Cake 2. CakePHP 2 は <a href=\"https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE\">MIT ライセンス</a>で公開されています。",
+          copyright: "© Piece of Cake 2. CakePHP 2 は <a href=\"https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE\">MIT ライセンス</a>で公開されています。",
         },
       },
     },

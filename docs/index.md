@@ -11,7 +11,19 @@ hero:
     is a community-maintained fork of CakePHP 2.x that runs on PHP 8.0–8.5.
     <span class="poc-hero-badge"><a href="https://packagist.org/packages/pieceofcake2/cakephp"><img
     src="https://img.shields.io/packagist/v/pieceofcake2/cakephp?label=pieceofcake2%2Fcakephp&color=d33c43"
-    alt="Latest version of pieceofcake2/cakephp on Packagist" height="20"></a></span>
+    alt="Latest version of pieceofcake2/cakephp on Packagist" height="20"></a><a href="https://packagist.org/packages/pieceofcake2/cakephp"><img
+    src="https://img.shields.io/packagist/dependency-v/pieceofcake2/cakephp/php?logo=php&logoColor=%23FFFFFF&label=PHP&labelColor=%23777BB4&color=%23FFFFFF"
+    alt="Supported PHP versions" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/actions/workflows/CI.yml"><img
+    src="https://img.shields.io/github/actions/workflow/status/pieceofcake2/cakephp/CI.yml?label=CI"
+    alt="CI status" height="20"></a><a href="https://codecov.io/gh/pieceofcake2/cakephp"><img
+    src="https://img.shields.io/codecov/c/gh/pieceofcake2/cakephp?label=Coverage"
+    alt="Test coverage" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/actions/workflows/CI.yml"><img
+    src="https://img.shields.io/badge/PHPStan-level%205-brightgreen?label=PHPStan"
+    alt="PHPStan level 5" height="20"></a><a href="https://packagist.org/packages/pieceofcake2/cakephp/stats"><img
+    src="https://img.shields.io/packagist/dt/pieceofcake2/cakephp?label=Downloads"
+    alt="Total downloads on Packagist" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE"><img
+    src="https://img.shields.io/github/license/pieceofcake2/cakephp?label=License"
+    alt="License" height="20"></a></span>
   image:
     src: /logo.png
     alt: CakePHP

@@ -1,9 +1,18 @@
 /* Styles for the top page (on top of the docs-skeleton theme) */
 
 .VPHero .tagline .poc-hero-badge {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-top: 16px;
   line-height: 0;
+}
+
+/* The hero text is centered below 960px (VitePress), so center the badges too */
+@media (max-width: 959px) {
+  .VPHero .tagline .poc-hero-badge {
+    justify-content: center;
+  }
 }
 
 .VPHero .tagline .poc-hero-badge img {
@@ -13,12 +22,17 @@
 }
 
 .VPHero .tagline a {
-  color: var(--cake-color-link);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .VPHero .tagline a:hover {
   text-decoration: underline;
+}
+
+.VPHero .tagline .poc-hero-badge a:hover {
+  text-decoration: none;
 }
 
 .VPHome .vp-doc h2 {
@@ -48,7 +62,7 @@
 .poc-feature {
   padding: 16px 18px;
   border-radius: 12px;
-  background-color: var(--vp-c-bg-soft);
+  background-color: color-mix(in srgb, var(--vp-c-bg-soft) 50%, var(--vp-c-bg));
 }
 
 .vp-doc .poc-feature p {
@@ -134,4 +148,12 @@
   .dark .VPHero.has-image .image-src {
     opacity: 0.11;
   }
+}
+
+/* Footer: the trademark notice and the copyright in smaller, lighter text */
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--vp-c-text-3);
 }

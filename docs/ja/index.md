@@ -11,7 +11,19 @@ hero:
     は、PHP 8.0〜8.5 で動作する、コミュニティがメンテナンスしている CakePHP 2.x のフォークです。
     <span class="poc-hero-badge"><a href="https://packagist.org/packages/pieceofcake2/cakephp"><img
     src="https://img.shields.io/packagist/v/pieceofcake2/cakephp?label=pieceofcake2%2Fcakephp&color=d33c43"
-    alt="Packagist の pieceofcake2/cakephp の最新バージョン" height="20"></a></span>
+    alt="Packagist の pieceofcake2/cakephp の最新バージョン" height="20"></a><a href="https://packagist.org/packages/pieceofcake2/cakephp"><img
+    src="https://img.shields.io/packagist/dependency-v/pieceofcake2/cakephp/php?logo=php&logoColor=%23FFFFFF&label=PHP&labelColor=%23777BB4&color=%23FFFFFF"
+    alt="対応している PHP のバージョン" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/actions/workflows/CI.yml"><img
+    src="https://img.shields.io/github/actions/workflow/status/pieceofcake2/cakephp/CI.yml?label=CI"
+    alt="CI の状態" height="20"></a><a href="https://codecov.io/gh/pieceofcake2/cakephp"><img
+    src="https://img.shields.io/codecov/c/gh/pieceofcake2/cakephp?label=Coverage"
+    alt="テストカバレッジ" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/actions/workflows/CI.yml"><img
+    src="https://img.shields.io/badge/PHPStan-level%205-brightgreen?label=PHPStan"
+    alt="PHPStan レベル 5" height="20"></a><a href="https://packagist.org/packages/pieceofcake2/cakephp/stats"><img
+    src="https://img.shields.io/packagist/dt/pieceofcake2/cakephp?label=Downloads"
+    alt="Packagist での総ダウンロード数" height="20"></a><a href="https://github.com/pieceofcake2/cakephp/blob/2.x/LICENSE"><img
+    src="https://img.shields.io/github/license/pieceofcake2/cakephp?label=License"
+    alt="ライセンス" height="20"></a></span>
   image:
     src: /logo.png
     alt: CakePHP
