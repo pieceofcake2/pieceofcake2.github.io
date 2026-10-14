@@ -30,6 +30,30 @@ import PackageList from './components/PackageList.vue'
 import './components/home.css'
 </script>
 
+<div class="poc-features">
+  <div class="poc-feature">
+    <p class="poc-feature-title">Rules for modern PHP</p>
+    <p>Runs on PHP 8.0–8.5. The code follows the
+    <a href="https://pieceofcake2.github.io/docs/contributing/cakephp-coding-conventions.html">CakePHP 5 coding standard</a>,
+    checked with phpcs.</p>
+  </div>
+  <div class="poc-feature">
+    <p class="poc-feature-title">Security fixes</p>
+    <p>Vulnerabilities in CakePHP 2.x are still fixed.
+    See <a href="https://pieceofcake2.github.io/docs/appendices/security-fixes.html">Security Fixes</a>.</p>
+  </div>
+  <div class="poc-feature">
+    <p class="poc-feature-title">Quality through Composer and tests</p>
+    <p>Installed with Composer, tested with PHPUnit 9.6 in CI on every PHP
+    version, and checked with PHPStan.</p>
+  </div>
+  <div class="poc-feature">
+    <p class="poc-feature-title">Modern tooling through plugins</p>
+    <p>Maintained plugins such as Twig views, plus new packages: Vite and
+    Webpack Encore asset helpers, CAPTCHA and browser E2E testing.</p>
+  </div>
+</div>
+
 ## Getting started
 
 ### New application

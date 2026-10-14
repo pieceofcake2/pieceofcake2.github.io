@@ -32,7 +32,7 @@ export default ({ bookNav }) => ({
     ja: {
       label: "Japanese",
       lang: "ja",
-      description: "CakePHP 2 を現在の PHP で: PHP 8 に対応した CakePHP 2.x のコミュニティフォーク",
+      description: "CakePHP 2 をモダン PHP で: PHP 8 に対応した CakePHP 2.x のコミュニティフォーク",
       themeConfig: {
         nav: bookNav({ locale: 'ja', absolute: true, current: 'home' }),
         footer: {

@@ -24,3 +24,43 @@
 .VPHome .vp-doc h2 {
   margin-top: 56px;
 }
+
+/* Features: text-only cards between the hero and "Getting started" */
+.poc-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 959px) {
+  .poc-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 559px) {
+  .poc-features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.poc-feature {
+  padding: 16px 18px;
+  border-radius: 12px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc .poc-feature p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .poc-feature p.poc-feature-title {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
