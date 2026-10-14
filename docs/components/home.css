@@ -137,9 +137,10 @@
   }
 }
 
-/* Footer: the trademark notice and the copyright in a smaller size */
+/* Footer: the trademark notice and the copyright in smaller, lighter text */
 .VPFooter .message,
 .VPFooter .copyright {
   font-size: 12px;
   line-height: 20px;
+  color: var(--vp-c-text-3);
 }
