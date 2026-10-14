@@ -27,19 +27,25 @@ const sections = groups.map((group) => ({
       :key="section.id"
       class="poc-group"
     >
-      <h3 :id="`packages-${section.id}`">
-        {{ t(section.title) }}
-      </h3>
-      <template
+      <div
         v-for="(category, index) in section.categories"
         :key="index"
+        class="poc-row"
       >
-        <h4
-          v-if="category.en"
-          class="poc-category"
-        >
-          {{ t(category) }}
-        </h4>
+        <div class="poc-label">
+          <h3
+            v-if="index === 0"
+            :id="`packages-${section.id}`"
+          >
+            {{ t(section.title) }}
+          </h3>
+          <h4
+            v-if="category.en"
+            class="poc-category"
+          >
+            {{ t(category) }}
+          </h4>
+        </div>
         <ul class="poc-grid">
           <li
             v-for="item in category.items"
@@ -75,29 +81,60 @@ const sections = groups.map((group) => ({
             </div>
           </li>
         </ul>
-      </template>
+      </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-.poc-group + .poc-group {
-  margin-top: 40px;
+.poc-packages {
+  margin-top: 24px;
 }
 
-.poc-category {
-  margin-top: 24px;
-  font-size: 15px;
+.poc-group {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.poc-row {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.poc-row + .poc-row {
+  padding-top: 0;
+}
+
+.vp-doc .poc-label h3,
+.poc-label h3 {
+  margin: 0 0 4px;
+  padding: 0;
+  border: 0;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.vp-doc .poc-label h4,
+.poc-label h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--vp-c-text-2);
+}
+
+.poc-label {
+  padding-top: 12px;
 }
 
 .vp-doc ul.poc-grid,
 ul.poc-grid {
   list-style: none;
-  margin: 12px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 12px;
 }
 
@@ -186,7 +223,16 @@ p.poc-desc {
   text-decoration: underline;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 640px) {
+  .poc-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .poc-label {
+    padding-top: 0;
+  }
+
   .vp-doc li.poc-card,
   li.poc-card {
     padding: 12px 14px;
