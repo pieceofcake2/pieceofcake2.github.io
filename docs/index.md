@@ -49,7 +49,7 @@ import './components/home.css'
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Security fixes</p>
-    <p><a href="https://pieceofcake2.github.io/docs/appendices/security-fixes.html">Vulnerabilities</a> found in CakePHP 2.x keep being fixed after the upstream end of life.</p>
+    <p><a href="https://pieceofcake2.github.io/docs/security/fixes.html">Vulnerabilities</a> found in CakePHP 2.x keep being fixed after the upstream end of life.</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Tested</p>
@@ -102,7 +102,7 @@ Please do not report vulnerabilities in public issues or pull requests.
 Use GitHub's private vulnerability reporting: open the **Security** tab of the
 affected repository and click **Report a vulnerability**. See the
 [security policy](https://github.com/pieceofcake2/.github/blob/master/SECURITY.md)
-for details, and [Security Fixes](https://pieceofcake2.github.io/docs/appendices/security-fixes.html)
+for details, and [Security Fixes](https://pieceofcake2.github.io/docs/security/fixes.html)
 for the vulnerabilities fixed so far.
 
 ## Contributing
