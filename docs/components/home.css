@@ -1,7 +1,9 @@
 /* Styles for the top page (on top of the docs-skeleton theme) */
 
 .VPHero .tagline .poc-hero-badge {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-top: 16px;
   line-height: 0;
 }
@@ -20,6 +22,10 @@
 
 .VPHero .tagline a:hover {
   text-decoration: underline;
+}
+
+.VPHero .tagline .poc-hero-badge a:hover {
+  text-decoration: none;
 }
 
 .VPHome .vp-doc h2 {
