@@ -136,3 +136,10 @@
     opacity: 0.11;
   }
 }
+
+/* Footer: the trademark notice and the copyright in a smaller size */
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 12px;
+  line-height: 20px;
+}
