@@ -64,3 +64,35 @@
   font-weight: 600;
   color: var(--vp-c-text-1);
 }
+
+/* Hero image: a large, faded logo set to the right as decoration */
+.VPHero.has-image {
+  overflow-x: clip;
+}
+
+.VPHero.has-image .image-src {
+  filter: none;
+  opacity: 0.18;
+}
+
+.dark .VPHero.has-image .image-src {
+  opacity: 0.14;
+}
+
+@media (min-width: 960px) {
+  .VPHero.has-image .image-container {
+    transform: translate(72px, -24px);
+  }
+
+  .VPHero.has-image .image-src {
+    max-width: 440px;
+    max-height: 440px;
+  }
+}
+
+/* Below 960px the image would sit above the text; leave it out there. */
+@media (max-width: 959px) {
+  .VPHero.has-image .image {
+    display: none;
+  }
+}

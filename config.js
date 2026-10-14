@@ -5,10 +5,67 @@
 // so it stays the same as the book's and the plugin documentation sites'.
 // `current: 'home'` links its "Home" item within this site.
 
+const SITE = "https://pieceofcake2.github.io/";
+
+// Share (Open Graph / X) metadata of the top page, per locale.
+const share = {
+  en: {
+    url: SITE,
+    locale: "en_US",
+    title: "CakePHP 2, maintained for modern PHP",
+    description: "pieceofcake2/cakephp is a community-maintained fork of CakePHP 2.x that runs on PHP 8.0–8.5.",
+    imageAlt: "Piece of Cake 2: CakePHP 2, maintained for modern PHP",
+  },
+  ja: {
+    url: SITE + "ja/",
+    locale: "ja_JP",
+    title: "CakePHP 2 をモダン PHP で",
+    description: "pieceofcake2/cakephp は、PHP 8.0〜8.5 で動作する、コミュニティがメンテナンスしている CakePHP 2.x のフォークです。",
+    imageAlt: "Piece of Cake 2: CakePHP 2, maintained for modern PHP",
+  },
+};
+
+function shareHead({ pageData }) {
+  const pages = { "index.md": "en", "ja/index.md": "ja" };
+  const lang = pages[pageData.relativePath];
+  if (!lang) {
+    return [];
+  }
+  const s = share[lang];
+  const other = share[lang === "en" ? "ja" : "en"];
+  const image = SITE + "og-image.png";
+  const meta = (attr, key, content) => ["meta", { [attr]: key, content }];
+
+  return [
+    ["link", { rel: "canonical", href: s.url }],
+    ["link", { rel: "alternate", hreflang: "en", href: share.en.url }],
+    ["link", { rel: "alternate", hreflang: "ja", href: share.ja.url }],
+    ["link", { rel: "alternate", hreflang: "x-default", href: share.en.url }],
+    meta("property", "og:type", "website"),
+    meta("property", "og:site_name", "Piece of Cake 2"),
+    meta("property", "og:title", s.title),
+    meta("property", "og:description", s.description),
+    meta("property", "og:url", s.url),
+    meta("property", "og:locale", s.locale),
+    meta("property", "og:locale:alternate", other.locale),
+    meta("property", "og:image", image),
+    meta("property", "og:image:type", "image/png"),
+    meta("property", "og:image:width", "1200"),
+    meta("property", "og:image:height", "630"),
+    meta("property", "og:image:alt", s.imageAlt),
+    meta("name", "twitter:card", "summary_large_image"),
+    meta("name", "twitter:title", s.title),
+    meta("name", "twitter:description", s.description),
+    meta("name", "twitter:image", image),
+    meta("name", "twitter:image:alt", s.imageAlt),
+  ];
+}
+
 export default ({ bookNav }) => ({
   base: "/",
   title: "Piece of Cake 2",
-  description: "CakePHP 2, maintained for modern PHP: a community-maintained fork of CakePHP 2.x for PHP 8.",
+  description: share.en.description,
+  transformHead: shareHead,
   sitemap: {
     hostname: "https://pieceofcake2.github.io/",
   },
@@ -32,7 +89,7 @@ export default ({ bookNav }) => ({
     ja: {
       label: "Japanese",
       lang: "ja",
-      description: "CakePHP 2 をモダン PHP で: PHP 8 に対応した CakePHP 2.x のコミュニティフォーク",
+      description: share.ja.description,
       themeConfig: {
         nav: bookNav({ locale: 'ja', absolute: true, current: 'home' }),
         footer: {
