@@ -49,7 +49,7 @@ import '../components/home.css'
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">脆弱性への対応</p>
-    <p>本家のサポートが終わったあとも、CakePHP 2.x で見つかった<a href="https://pieceofcake2.github.io/docs/ja/appendices/security-fixes.html">脆弱性</a>を修正し続けています。</p>
+    <p>本家のサポートが終わったあとも、CakePHP 2.x で見つかった<a href="https://pieceofcake2.github.io/docs/ja/security/fixes.html">脆弱性</a>を修正し続けています。</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">テストで品質を確保</p>
@@ -100,7 +100,7 @@ composer require pieceofcake2/cakephp
 GitHub の非公開の脆弱性報告を使ってください。対象のリポジトリを開き、**Security** タブの
 **Report a vulnerability** から報告できます。詳しくは
 [セキュリティポリシー](https://github.com/pieceofcake2/.github/blob/master/SECURITY.md) を、
-これまでに修正した脆弱性は[脆弱性への対応](https://pieceofcake2.github.io/docs/ja/appendices/security-fixes.html)
+これまでに修正した脆弱性は[脆弱性への対応](https://pieceofcake2.github.io/docs/ja/security/fixes.html)
 を参照してください。
 
 ## コントリビューション
