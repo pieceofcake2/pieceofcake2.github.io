@@ -57,7 +57,7 @@ import '../components/home.css'
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">プラグインでモダンな開発に</p>
-    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> によるアセットの連携、<a href="https://pieceofcake2.github.io/twig-view/">Twig のビュー</a>、<a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>、<a href="https://pieceofcake2.github.io/e2e-test/">ブラウザでのエンドツーエンドテスト</a>など、今の開発に合わせたプラグインを用意しています。</p>
+    <p><a href="https://pieceofcake2.github.io/vite/">Vite</a> によるアセットの連携、<a href="https://pieceofcake2.github.io/twig-view/">Twig のビュー</a>、<a href="https://pieceofcake2.github.io/captcha/">CAPTCHA</a>、<a href="https://pieceofcake2.github.io/e2e-test/">ブラウザでの End-to-End テスト</a>など、今の開発に合わせたプラグインを用意しています。</p>
   </div>
 </div>
 
