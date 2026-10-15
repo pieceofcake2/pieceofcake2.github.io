@@ -87,7 +87,7 @@ function markdownOutput(packageListMarkdown) {
 
 // All documentation sites are served under this host, and crawlers read
 // robots.txt only at the root. sitemap.xml of this site is a sitemap index: it
-// lists sitemap-home.xml (the pages of this site) and the sitemap.xml of every
+// lists sitemap-pages.xml (the pages of this site) and the sitemap.xml of every
 // documentation site in packages.js. The built-in sitemap of VitePress is not
 // used here because it always writes sitemap.xml.
 function writeSitemaps({ outDir, pages }) {
@@ -97,12 +97,12 @@ function writeSitemaps({ outDir, pages }) {
 
   const pageUrls = pages.map((page) => SITE + page.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, ".html"));
   writeFileSync(
-    join(outDir, "sitemap-home.xml"),
+    join(outDir, "sitemap-pages.xml"),
     xml("urlset", pageUrls.map((loc) => `  <url><loc>${loc}</loc></url>\n`).join("")),
   );
 
   const sites = groups.flatMap((g) => g.items ?? g.categories.flatMap((c) => c.items));
-  const sitemaps = [SITE + "sitemap-home.xml", ...new Set(sites.map((item) => docsUrl(item) + "sitemap.xml"))];
+  const sitemaps = [SITE + "sitemap-pages.xml", ...new Set(sites.map((item) => docsUrl(item) + "sitemap.xml"))];
   writeFileSync(
     join(outDir, "sitemap.xml"),
     xml("sitemapindex", sitemaps.map((loc) => `  <sitemap><loc>${loc}</loc></sitemap>\n`).join("")),
