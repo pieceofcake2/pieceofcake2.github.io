@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Clone docs-skeleton
         run: git clone --depth 1 https://github.com/pieceofcake2/docs-skeleton.git .skeleton
