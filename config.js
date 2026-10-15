@@ -61,11 +61,32 @@ function shareHead({ pageData }) {
   ];
 }
 
-export default ({ bookNav }) => ({
+// The Markdown version of the pages (index.md, ja/index.md) and llms.txt are
+// written by the skeleton. The package list is a Vue component on the page; in
+// the Markdown it is replaced by the same list as Markdown, and llms.txt also
+// links the llms.txt of every documentation site.
+function markdownOutput(packageListMarkdown) {
+  if (!packageListMarkdown) {
+    return undefined;
+  }
+
+  const langOf = (locale) => (locale === "root" ? "en" : locale);
+
+  return {
+    transform: (content, { locale }) =>
+      content.replace(/<PackageList\b[^>]*\/>/g, () => packageListMarkdown(langOf(locale))),
+    llmsTxt: (locale) =>
+      `## ${locale === "ja" ? "ドキュメントサイト" : "Documentation sites"}\n\n` +
+      packageListMarkdown(langOf(locale)),
+  };
+}
+
+export default ({ bookNav, packageListMarkdown }) => ({
   base: "/",
   title: "Piece of Cake 2",
   description: share.en.description,
   transformHead: shareHead,
+  markdownOutput: markdownOutput(packageListMarkdown),
   sitemap: {
     hostname: "https://pieceofcake2.github.io/",
   },

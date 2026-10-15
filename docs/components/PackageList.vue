@@ -2,7 +2,12 @@
 // The package list is defined in pieceofcake2/docs-skeleton, which also builds
 // the "Plugins" menu of the header from it. docs/ is copied into the skeleton
 // at build time, so the path is relative to .skeleton/docs/components/.
-import { groups, docsUrl, githubUrl, packagistUrl, badgeUrl } from '../../.vitepress/packages.js'
+import * as packages from '../../.vitepress/packages.js'
+
+const { groups, docsUrl, githubUrl, packagistUrl, badgeUrl } = packages
+// Link to the Markdown of the documentation on GitHub, for AI tools. Older
+// skeletons have no markdownUrl(); the link is then left out.
+const markdownUrl = packages.markdownUrl ?? (() => undefined)
 
 const props = defineProps({
   lang: { type: String, default: 'en' },
@@ -11,8 +16,8 @@ const props = defineProps({
 const t = (entry) => entry[props.lang] ?? entry.en
 
 const labels = {
-  en: { docs: 'Documentation', github: 'GitHub', badge: 'Latest version on Packagist' },
-  ja: { docs: 'ドキュメント', github: 'GitHub', badge: 'Packagist の最新バージョン' },
+  en: { docs: 'Documentation', markdown: 'Markdown', markdownTitle: 'Markdown source of the documentation', github: 'GitHub', badge: 'Latest version on Packagist' },
+  ja: { docs: 'ドキュメント', markdown: 'Markdown', markdownTitle: 'ドキュメントの Markdown ソース', github: 'GitHub', badge: 'Packagist の最新バージョン' },
 }
 const label = (key) => (labels[props.lang] ?? labels.en)[key]
 
@@ -73,6 +78,11 @@ const sections = groups.map((group) => ({
               </a>
               <span class="poc-links">
                 <a :href="docsUrl(item)">{{ label('docs') }}</a>
+                <a
+                  v-if="markdownUrl(item)"
+                  :href="markdownUrl(item)"
+                  :title="label('markdownTitle')"
+                >{{ label('markdown') }}</a>
                 <a :href="githubUrl(item)">{{ label('github') }}</a>
               </span>
             </div>
