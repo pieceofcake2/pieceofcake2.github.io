@@ -6,7 +6,8 @@ project, published at https://pieceofcake2.github.io/
 The page introduces [pieceofcake2/cakephp](https://github.com/pieceofcake2/cakephp),
 a community-maintained fork of CakePHP 2.x for PHP 8, and lists the packages
 the project maintains. The documentation of CakePHP 2 itself is the book at
-https://pieceofcake2.github.io/docs/ ([pieceofcake2/docs](https://github.com/pieceofcake2/docs)).
+https://pieceofcake2.github.io/docs/ ([pieceofcake2/docs](https://github.com/pieceofcake2/docs);
+Markdown: [docs/en/index.md](https://github.com/pieceofcake2/docs/blob/2.x/docs/en/index.md)).
 
 The site uses the same theme as the book:
 [pieceofcake2/docs-skeleton](https://github.com/pieceofcake2/docs-skeleton)
@@ -17,7 +18,9 @@ The site uses the same theme as the book:
 - `docs/index.md` - the English page (`/`)
 - `docs/ja/index.md` - the Japanese page (`/ja/`)
 - `docs/components/PackageList.vue` - renders the package list shown on both
-  pages. The list itself is `.vitepress/packages.js` of
+  pages, with links to the documentation site, the Markdown of the
+  documentation on GitHub and the repository of each package. The list itself
+  is `.vitepress/packages.js` of
   [pieceofcake2/docs-skeleton](https://github.com/pieceofcake2/docs-skeleton),
   which also builds the "Plugins" menu of the header; the component imports it
   from the skeleton cloned at build time. When a repository is added, add it
@@ -45,6 +48,14 @@ bin/build.sh --preview 4173   # build, then serve the result on port 4173
 deploy workflow. Use `--skeleton-path ../docs-skeleton` to build with a local
 checkout of the skeleton. Dependencies are installed with
 `ignore-scripts=true` (the skeleton's `.npmrc`).
+
+## Markdown for AI Tools
+
+The skeleton also writes the Markdown of each page (`/index.md`,
+`/ja/index.md`) and `llms.txt` / `llms-full.txt` (`/llms.txt`, `/ja/llms.txt`).
+`config.js` replaces the `<PackageList>` component with the same list in
+Markdown, and adds the list of documentation sites, with the `llms.txt` of
+each, to `llms.txt`.
 
 ## Deployment
 
