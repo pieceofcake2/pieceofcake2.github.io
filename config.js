@@ -5,6 +5,10 @@
 // so it stays the same as the book's and the plugin documentation sites'.
 // `current: 'home'` links its "Home" item within this site.
 
+import { writeFileSync } from "fs";
+import { join } from "path";
+import { groups, docsUrl } from "./.vitepress/packages.js";
+
 const SITE = "https://pieceofcake2.github.io/";
 
 // Share (Open Graph / X) metadata of the top page, per locale.
@@ -81,15 +85,39 @@ function markdownOutput(packageListMarkdown) {
   };
 }
 
+// All documentation sites are served under this host, and crawlers read
+// robots.txt only at the root. sitemap.xml of this site is a sitemap index: it
+// lists sitemap-home.xml (the pages of this site) and the sitemap.xml of every
+// documentation site in packages.js. The built-in sitemap of VitePress is not
+// used here because it always writes sitemap.xml.
+function writeSitemaps({ outDir, pages }) {
+  const xml = (root, body) =>
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    `<${root} xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}</${root}>\n`;
+
+  const pageUrls = pages.map((page) => SITE + page.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, ".html"));
+  writeFileSync(
+    join(outDir, "sitemap-home.xml"),
+    xml("urlset", pageUrls.map((loc) => `  <url><loc>${loc}</loc></url>\n`).join("")),
+  );
+
+  const sites = groups.flatMap((g) => g.items ?? g.categories.flatMap((c) => c.items));
+  const sitemaps = [SITE + "sitemap-home.xml", ...new Set(sites.map((item) => docsUrl(item) + "sitemap.xml"))];
+  writeFileSync(
+    join(outDir, "sitemap.xml"),
+    xml("sitemapindex", sitemaps.map((loc) => `  <sitemap><loc>${loc}</loc></sitemap>\n`).join("")),
+  );
+
+  writeFileSync(join(outDir, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
+}
+
 export default ({ bookNav, packageListMarkdown }) => ({
   base: "/",
   title: "Piece of Cake 2",
   description: share.en.description,
   transformHead: shareHead,
   markdownOutput: markdownOutput(packageListMarkdown),
-  sitemap: {
-    hostname: "https://pieceofcake2.github.io/",
-  },
+  buildEnd: writeSitemaps,
   themeConfig: {
     // A search over this single page is of little use; the book has its own.
     search: { provider: "none" },
