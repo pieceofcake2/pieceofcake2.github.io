@@ -15,6 +15,10 @@ const props = defineProps({
 
 const t = (entry) => entry[props.lang] ?? entry.en
 
+// The Japanese page links the Japanese documentation where the site has it.
+const docs = (item) => docsUrl(item, props.lang)
+const markdown = (item) => markdownUrl(item, props.lang)
+
 const labels = {
   en: { docs: 'Documentation', markdown: 'Markdown', markdownTitle: 'Markdown source of the documentation', github: 'GitHub', badge: 'Latest version on Packagist' },
   ja: { docs: 'ドキュメント', markdown: 'Markdown', markdownTitle: 'ドキュメントの Markdown ソース', github: 'GitHub', badge: 'Packagist の最新バージョン' },
@@ -56,7 +60,7 @@ const sections = groups.map((group) => ({
           >
             <a
               class="poc-name"
-              :href="docsUrl(item)"
+              :href="docs(item)"
               :title="label('docs')"
             >
               <span class="poc-vendor">pieceofcake2/</span><span class="poc-repo">{{ item.package.split('/')[1] }}</span>
@@ -77,10 +81,10 @@ const sections = groups.map((group) => ({
                 >
               </a>
               <span class="poc-links">
-                <a :href="docsUrl(item)">{{ label('docs') }}</a>
+                <a :href="docs(item)">{{ label('docs') }}</a>
                 <a
-                  v-if="markdownUrl(item)"
-                  :href="markdownUrl(item)"
+                  v-if="markdown(item)"
+                  :href="markdown(item)"
                   :title="label('markdownTitle')"
                 >{{ label('markdown') }}</a>
                 <a :href="githubUrl(item)">{{ label('github') }}</a>

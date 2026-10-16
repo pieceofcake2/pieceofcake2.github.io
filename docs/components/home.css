@@ -157,3 +157,9 @@
   line-height: 20px;
   color: var(--vp-c-text-3);
 }
+
+/* Hero actions (Documentation / GitHub): rounded rectangles instead of the
+   pill shape of VitePress */
+.VPHero .actions .VPButton {
+  border-radius: 8px;
+}
