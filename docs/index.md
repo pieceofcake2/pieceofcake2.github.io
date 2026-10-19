@@ -105,6 +105,13 @@ affected repository and click **Report a vulnerability**. See the
 for details, and [Security Fixes](https://pieceofcake2.github.io/docs/security/fixes.html)
 for the vulnerabilities fixed so far.
 
+For your own applications, the security packages check and harden them.
+[pieceofcake2/security-check](https://pieceofcake2.github.io/security-check/) runs the checks of the known
+vulnerabilities of the Composer packages (SCA), of the code (SAST) and of the running application (DAST) in one
+command, each with a PDF report, and
+[pieceofcake2/security-headers](https://pieceofcake2.github.io/security-headers/) adds the security headers to
+every response. See [Security Checks](https://pieceofcake2.github.io/docs/security/checks.html).
+
 ## Contributing
 
 Bug reports (especially PHP 8.x compatibility issues) and pull requests are
