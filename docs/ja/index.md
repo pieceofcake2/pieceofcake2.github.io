@@ -103,6 +103,13 @@ GitHub の非公開の脆弱性報告を使ってください。対象のリポ�
 これまでに修正した脆弱性は[脆弱性への対応](https://pieceofcake2.github.io/docs/ja/security/fixes.html)
 を参照してください。
 
+アプリケーション自体の診断と対策には、セキュリティのパッケージがあります。
+[pieceofcake2/security-check](https://pieceofcake2.github.io/security-check/ja/) は、Composer のパッケージの既知の
+脆弱性 (SCA)、コードの静的解析 (SAST)、動いているアプリケーションのスキャン (DAST) を 1 つのコマンドで実行し、それぞれ
+PDF の報告書にします。[pieceofcake2/security-headers](https://pieceofcake2.github.io/security-headers/ja/) は、
+すべてのレスポンスにセキュリティヘッダーを付けます。[セキュリティ診断](https://pieceofcake2.github.io/docs/ja/security/checks.html)
+を参照してください。
+
 ## コントリビューション
 
 バグ報告（特に PHP 8.x の互換性の問題）やプルリクエストを歓迎しています。始める前に
