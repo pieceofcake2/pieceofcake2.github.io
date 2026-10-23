@@ -45,7 +45,7 @@ import './components/home.css'
 <div class="poc-features">
   <div class="poc-feature">
     <p class="poc-feature-title">Modern PHP</p>
-    <p>Runs on PHP 8.0–8.5. Installed and managed with Composer, with code that follows the CakePHP 5 <a href="https://pieceofcake2.github.io/docs/contributing/cakephp-coding-conventions.html">coding standard</a>.</p>
+    <p>Runs on PHP 8.0–8.5. Installed and managed with Composer, with code that follows the CakePHP 5 <a href="https://pieceofcake2.github.io/docs/contributing/cakephp-coding-conventions.html">coding standard</a>. The framework classes are in the <code>Cake\</code> namespace: applications and plugins can keep their global classes as they are, or use <a href="https://pieceofcake2.github.io/docs/development/namespaced-classes.html">namespaced classes</a> and the CakePHP 5 directory layout.</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">Security fixes</p>

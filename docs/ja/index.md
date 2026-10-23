@@ -45,7 +45,7 @@ import '../components/home.css'
 <div class="poc-features">
   <div class="poc-feature">
     <p class="poc-feature-title">モダン PHP に対応</p>
-    <p>PHP 8.0〜8.5 で動作します。Composer でインストールと依存関係を管理し、コードは CakePHP 5 と同じ<a href="https://pieceofcake2.github.io/docs/ja/contributing/cakephp-coding-conventions.html">コーディング規約</a>にそろえています。</p>
+    <p>PHP 8.0〜8.5 で動作します。Composer でインストールと依存関係を管理し、コードは CakePHP 5 と同じ<a href="https://pieceofcake2.github.io/docs/ja/contributing/cakephp-coding-conventions.html">コーディング規約</a>にそろえています。フレームワークのクラスは <code>Cake\</code> 名前空間にあり、アプリケーションとプラグインは、これまでの名前空間のないクラスのままでも、<a href="https://pieceofcake2.github.io/docs/ja/development/namespaced-classes.html">名前空間のあるクラス</a>と CakePHP 5 のディレクトリ構成を使うこともできます。</p>
   </div>
   <div class="poc-feature">
     <p class="poc-feature-title">脆弱性への対応</p>
