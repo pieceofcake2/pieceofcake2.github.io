@@ -7,7 +7,12 @@
 
 import { writeFileSync } from "fs";
 import { join } from "path";
-import { groups, docsUrl } from "./.vitepress/packages.js";
+import * as packages from "./.vitepress/packages.js";
+
+const { groups } = packages;
+// The root of the documentation site of a package. Older skeletons have no
+// siteUrl(); their docsUrl() is the root of the site.
+const siteUrl = packages.siteUrl ?? packages.docsUrl;
 
 const SITE = "https://pieceofcake2.github.io/";
 
@@ -88,8 +93,9 @@ function markdownOutput(packageListMarkdown) {
 // All documentation sites are served under this host, and crawlers read
 // robots.txt only at the root. sitemap.xml of this site is a sitemap index: it
 // lists sitemap-pages.xml (the pages of this site) and the sitemap.xml of every
-// documentation site in packages.js. The built-in sitemap of VitePress is not
-// used here because it always writes sitemap.xml.
+// documentation site in packages.js, once for the packages documented on a page
+// of the book. The built-in sitemap of VitePress is not used here because it
+// always writes sitemap.xml.
 function writeSitemaps({ outDir, pages }) {
   const xml = (root, body) =>
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
@@ -102,7 +108,7 @@ function writeSitemaps({ outDir, pages }) {
   );
 
   const sites = groups.flatMap((g) => g.items ?? g.categories.flatMap((c) => c.items));
-  const sitemaps = [SITE + "sitemap-pages.xml", ...new Set(sites.map((item) => docsUrl(item) + "sitemap.xml"))];
+  const sitemaps = [SITE + "sitemap-pages.xml", ...new Set(sites.map((item) => siteUrl(item) + "sitemap.xml"))];
   writeFileSync(
     join(outDir, "sitemap.xml"),
     xml("sitemapindex", sitemaps.map((loc) => `  <sitemap><loc>${loc}</loc></sitemap>\n`).join("")),
